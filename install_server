@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Author: Saurav Kumar
+# Version: 1.0
+
+### KivyConnectServer Installation Notes ###
+#   1. Creating python based virtual environment.
+#   2. Installing all the required packages needed by kivyConnectServer.
+#   3. Setting up systemd settings for kivyConnectServer.
+#   4. Starting kivyConnectServer and enabling it so that it starts automatically when system reboots.
+#   5. Thinking of smiling face of user installing kivyConnectServer.
+
+INSDIR=~/.kivyConnect
+#cp -Rp . $INSDIR  # copy all files of current directory to user home install directory
+#mkdir -p $INSDIR/logs  # creating the logs directory
+#sudo apt-get install python-dev virtualenv python-pip  # installing global packages required.
+#virtualenv $INSDIR/venvserver  # creating virtualenv for server
+#$INSDIR/setup_server.py develop  # installing the packages required by server
+sudo cp $INSDIR/systemd_kivyconnectserver.conf /etc/systemd/system/kivyconnectserver.service  # enabling sys start run
+sudo systemctl daemon-reload
+sudo systemctl start kivyconnectserver
+sudo systemctl enable kivyconnectserver
+sudo service kivyconnectserver restart

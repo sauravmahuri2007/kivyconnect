@@ -1,0 +1,11 @@
+*.pyc
+logs/*
+.idea/
+*~
+*.swp
+*.swo
+*.swn
+venvserver/
+*.db
+kivyconnectserver.egg-info/
+kivyconnectclient.egg-info/
