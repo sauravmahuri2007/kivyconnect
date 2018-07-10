@@ -3,10 +3,11 @@ Flask==1.0.2
 itsdangerous==0.24
 Jinja2==2.10
 MarkupSafe==1.0
-python-xlib==0.23
 Pillow==5.2.0
 PyAutoGUI==0.9.36
 PyMsgBox==1.0.6
 PyScreeze==0.1.14
+python-xlib==0.23
 PyTweening==1.0.3
+six==1.11.0
 Werkzeug==0.14.1

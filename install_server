@@ -11,11 +11,11 @@
 #   5. Thinking of smiling face of user installing kivyConnectServer.
 
 INSDIR=~/.kivyConnect
-#cp -Rp . $INSDIR  # copy all files of current directory to user home install directory
-#mkdir -p $INSDIR/logs  # creating the logs directory
-#sudo apt-get install python-dev virtualenv python-pip  # installing global packages required.
-#virtualenv $INSDIR/venvserver  # creating virtualenv for server
-#$INSDIR/setup_server.py develop  # installing the packages required by server
+cp -Rp . $INSDIR  # copy all files of current directory to user home install directory
+mkdir -p $INSDIR/logs  # creating the logs directory
+sudo apt-get install python-dev virtualenv python-pip  # installing global packages
+virtualenv $INSDIR/venvserver  # creating virtualenv for server
+$INSDIR/venvserver/bin/pip install -r requirements_server.txt  # install all required packages inside virtualenv
 sudo cp $INSDIR/systemd_kivyconnectserver.conf /etc/systemd/system/kivyconnectserver.service  # enabling sys start run
 sudo systemctl daemon-reload
 sudo systemctl start kivyconnectserver
