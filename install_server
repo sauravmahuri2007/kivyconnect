@@ -16,6 +16,7 @@ mkdir -p $INSDIR/logs  # creating the logs directory
 sudo apt-get install python-dev virtualenv python-pip  # installing global packages
 virtualenv $INSDIR/venvserver  # creating virtualenv for server
 $INSDIR/venvserver/bin/pip install -r requirements_server.txt  # install all required packages inside virtualenv
+sed -i "s/@USER/$USER/g; s/@DISPLAY/$DISPLAY/g" $INSDIR/systemd_kivyconnectserver.conf $INSDIR/kivyserver.ini  # changes @ variables to actual environment variables
 sudo cp $INSDIR/systemd_kivyconnectserver.conf /etc/systemd/system/kivyconnectserver.service  # enabling sys start run
 sudo systemctl daemon-reload
 sudo systemctl start kivyconnectserver
